@@ -5,7 +5,8 @@ import {
   MatToolbarModule,
   MatButtonModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatTableModule,
 } from "@angular/material";
 import { RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -17,11 +18,14 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
+import { OutingsService } from './services/outings.service';
+import { OutingIndexComponent } from './components/outing/outing-index/outing-index.component';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'outings', component: OutingIndexComponent},
 ]
 
 @NgModule({
@@ -30,7 +34,8 @@ const routes = [
     RegistrationComponent,
     LoginComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    OutingIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -41,12 +46,15 @@ const routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
 
   ],
   providers: [
     AuthService,
+    OutingsService,
+
   ],
   bootstrap: [AppComponent]
 })
