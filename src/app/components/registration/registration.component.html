@@ -1,0 +1,32 @@
+<h1>Registration</h1>
+
+<hr>
+
+<div class="registrationForm">
+<form (ngSubmit)="onSubmit()" [formGroup]="_registerForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Username" formControlName="username" type="username"/>
+      </mat-form-field>
+    </div>
+    <br>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email" type="email"/>
+      </mat-form-field>
+    </div>
+    <br>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password" type="password"/>
+      </mat-form-field>
+    </div>
+    <br>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Register</button>
+  <br>
+  <br>
+<span class="help-block">Already have an account? <a routerLink='/login'> Login</a></span>
+</form>
+</div>
