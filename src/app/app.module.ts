@@ -35,7 +35,7 @@ const routes = [
     LoginComponent,
     HeaderComponent,
     HomeComponent,
-    OutingIndexComponent
+    OutingIndexComponent,
   ],
   imports: [
     BrowserModule,
