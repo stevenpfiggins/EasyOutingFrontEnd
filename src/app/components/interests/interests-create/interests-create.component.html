@@ -1,0 +1,21 @@
+<h1>Add an Interest</h1>
+<hr>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="interestForm">
+<div>
+<div>
+  <mat-form-field>
+    <input matInput placeholder="UserName" formControlName="UserName" type="UserName" required/>
+  </mat-form-field>
+</div>
+<div>
+<mat-form-field>
+  <input matInput placeholder="UserLocation" formControlName="UserLocation" type="UserLocation" required/>
+</mat-form-field>
+</div>
+</div>
+<button mat-raised-button class="nav-btn" color="primary" type="submit">Create Interest</button>
+</form>
+<a mat-button routerLink="/interests">Back to List</a>
+
+

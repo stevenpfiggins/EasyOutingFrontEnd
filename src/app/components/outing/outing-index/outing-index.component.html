@@ -1,5 +1,5 @@
 <h1>Index</h1>
-<a mat-raised-button color="primary">Create New</a>
+<a mat-raised-button color="primary" routerLink="/outings/create">Create New</a>
 <hr>
 
 <div>
@@ -32,6 +32,13 @@
       <mat-cell *matCellDef="let outing">
         <i mat-icon class="material-icons">edit</i>
         <i class="material-icons">delete</i>
+
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let outing" routerLink="/outings/detail/{{outing.OutingId}}">
+      <i class="material-icons">library books</i>
+    </mat-cell>
+    </ng-container>
       </mat-cell>
     </ng-container>
 

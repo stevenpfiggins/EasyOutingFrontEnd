@@ -1,0 +1,22 @@
+<h1>Index</h1>
+<a mat-raised-button color="primary" routerLink="/interests/create">Create New</a>
+<hr>
+
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="UserName">
+      <mat-header-cell *matHeaderCellDef>User Name </mat-header-cell>
+      <mat-cell *matCellDef="let interests"> {{interests.userName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UserLocation">
+      <mat-header-cell *matHeaderCellDef>User Location</mat-header-cell>
+      <mat-cell *matCellDef="let interests"> {{interests.userLocation}}</mat-cell>
+    </ng-container>
+
+  </mat-table>
+</div>
+
