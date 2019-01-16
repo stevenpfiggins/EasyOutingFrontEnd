@@ -25,6 +25,8 @@ import { InterestsCreateComponent } from './components/interests/interests-creat
 import { InterestsService } from './services/interests.service';
 import { InterestsIndexComponent } from './components/interests/interests-index/interests-index.component';
 import { OutingDetailComponent } from './components/outing/outing-detail/outing-detail.component';
+import { OutingEditComponent } from './components/outing/outing-edit/outing-edit.component';
+import { OutingDeleteComponent } from './components/outing/outing-delete/outing-delete.component';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
@@ -35,7 +37,9 @@ const routes = [
   path: 'outings', children: [
     {path: '', component: OutingIndexComponent},
     {path: 'create', component: OutingCreateComponent},
-    {path: 'detail/:id', component: OutingDetailComponent}
+    {path: 'detail/:id', component: OutingDetailComponent},
+    {path: 'edit/:id', component: OutingEditComponent},
+    {path: 'delete/:id', component: OutingDeleteComponent}
   ]
 },
 
@@ -60,7 +64,9 @@ const routes = [
     OutingCreateComponent,
     InterestsCreateComponent,
     InterestsIndexComponent,
-    OutingDetailComponent
+    OutingDetailComponent,
+    OutingEditComponent,
+    OutingDeleteComponent
   ],
   imports: [
     BrowserModule,

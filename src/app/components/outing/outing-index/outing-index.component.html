@@ -30,7 +30,7 @@
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef> </mat-header-cell>
       <mat-cell *matCellDef="let outing">
-        <i mat-icon class="material-icons">edit</i>
+        <i mat-icon class="material-icons" routerLink="/outings/edit/{{outing.EntityId}}">edit</i>
         <i class="material-icons">delete</i>
 
     <ng-container matColumnDef="details">
