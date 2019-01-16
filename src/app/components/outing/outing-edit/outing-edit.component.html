@@ -1,0 +1,45 @@
+<h1>Edit an Outing</h1>
+<hr>
+
+<div *ngIf="outing">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editOutingForm">
+    <div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="OutingEntityId" formControlName="OutingEntityId" type="OutingEntityId" required [value]="outing.OutingEntityId"/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="OutingName" formControlName="OutingName" type="OutingName" required [value]="note.OutingName"/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="OutingDescription" formControlName="OutingDescription" type="OutingDescription" required [value]="note.OutingDescription"/>
+        </mat-form-field>
+      </div>
+      <div>
+          <mat-form-field>
+            <input matInput placeholder="OutingLocation" formControlName="OutingLocation" type="OutingLocation" required [value]="note.OutingLocation"/>
+          </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+              <input matInput placeholder="OutingDate" formControlName="OutingDate" type="OutingDate" required [value]="note.OutingDate"/>
+            </mat-form-field>
+          </div>
+          <div>
+              <mat-form-field>
+                <input matInput placeholder="OutingType" formControlName="OutingType" type="OutingType" required [value]="note.OutingType"/>
+              </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                  <input matInput placeholder="CreatedBy" formControlName="CreatedBy" type="CreatedBy" required [value]="note.CreatedBy"/>
+                </mat-form-field>
+              </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+  </form>
+</div>

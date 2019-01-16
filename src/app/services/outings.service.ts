@@ -20,10 +20,19 @@ export class OutingsService {
   }
   
   getOuting(id: string){
-    return this._http.get(`${Api_Url}/Outing/${id}`, { headers: this.getHeaders( ) });
+    return this._http.get(`${Api_Url}/Outing/${id}`, { headers: this.getHeaders( )});
+  }
+
+  updateOuting(outing: Outing) {
+    return this._http.put(`${Api_Url}/Outing`, outing, {headers: this.getHeaders( )});
+  }
+
+  deleteOuting(id: number) {
+    return this._http.get(`${Api_Url}/Outing/${id}`, { headers: this.getHeaders() });
   }
   
     private getHeaders() {
       return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
     }
 }
+
