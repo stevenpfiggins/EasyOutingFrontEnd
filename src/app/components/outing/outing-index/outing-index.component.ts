@@ -10,7 +10,7 @@ import { MatTableDataSource } from '@angular/material';
 })
 export class OutingIndexComponent implements OnInit {
 
-  columnNames = ['OutingName', 'OutingDate', 'OutingLocation', 'OutingType', 'CreatedOn', 'buttons'];
+  columnNames = ['details', 'OutingName', 'OutingDate', 'OutingLocation', 'OutingType', 'CreatedOn', 'buttons'];
   dataSource: MatTableDataSource<Outing>
 
   constructor(private _outingService: OutingsService) { }

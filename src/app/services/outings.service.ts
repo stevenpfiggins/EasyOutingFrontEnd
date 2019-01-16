@@ -4,9 +4,7 @@ import { Outing } from '../Models/Outing';
 
 const Api_Url = "https://localhost:44311/api"
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class OutingsService {
 
   constructor(private _http: HttpClient) { }
