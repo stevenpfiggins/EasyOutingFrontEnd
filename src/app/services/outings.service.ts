@@ -21,7 +21,7 @@ export class OutingsService {
     return this._http.get(`${Api_Url}/Outing/${id}`, { headers: this.getHeaders( )});
   }
 
-  updateOuting(outing: Outing) {
+  updateOuting(outing: Outing) {console.log(outing)
     return this._http.put(`${Api_Url}/Outing`, outing, {headers: this.getHeaders( )});
   }
 

@@ -1,30 +1,29 @@
 <h1>Details</h1>
 
 <hr>
-<div *ngIf="Details">
+<div *ngIf="outing">
 
   <div>
-    <label for ="">OutingEntityId:</label>
-    <span>{{outing.outingEntityId}}</span>
-  </div>
-  <div>
-    <label for="">OutingName:</label>
+    <label for="">Name: </label>
     <span>{{outing.outingName}}</span>
   </div>
   <div>
-    <label for="">OutingDescription:</label>
+    <label for="">Description: </label>
     <span>{{outing.outingDescription}}</span>
   </div>
-  <div></div>
   <div>
-    <label for="">OutingDate:</label>
-    <span>{{outing.outingDate</span>
+    <label for="">Location: </label>
+    <span>{{outing.outingLocation}}</span>
+  </div>
+  <div>
+    <label for="">Date: </label>
+    <span>{{outing.outingDate}}</span>
     </div>
     <div>
-      <label for="">OutingType:</label>
+      <label for="">Type: </label>
       <span>{{outing.outingType}}</span>
     </div>
   </div>
 
-<button mat-button color ="accent">Edit</button>
+<button mat-button color ="accent" routerLink="/outings/edit/{{outing.outingEntityId}}">Edit</button>
 <button mat-button color ="primary" routerLink="/outings">Back to List</button>

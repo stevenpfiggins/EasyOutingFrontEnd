@@ -33,6 +33,7 @@ export class OutingEditComponent implements OnInit {
 
   createForm() {
     this.editOutingForm = this._form.group({
+      OutingEntityId: new FormControl(this.outing.OutingEntityId),
       OutingName: new FormControl(this.outing.OutingName),
       OutingDescription: new FormControl(this.outing.OutingDescription),
       OutingLocation: new FormControl(this.outing.OutingLocation),
