@@ -14,15 +14,11 @@ export class OutingsService {
   getOutings() {
     return this._http.get(`${Api_Url}/Outing`, {headers: this.getHeaders() });
   }
-
-  private getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
-  }
-
+  
   createOuting(outing: Outing){
-    return this._http.post(`${Api_Url}/Outing`, outing, { headers: this.getHeaders()});
+    return this._http.post(`${Api_Url}/Outing`, outing, { headers: this.getHeaders() });
   }
-
+  
   getOuting(id: string){
     return this._http.get(`${Api_Url}/Outing/${id}`, { headers: this.getHeaders( )});
   }
@@ -34,6 +30,9 @@ export class OutingsService {
   deleteOuting(id: number) {
     return this._http.get(`${Api_Url}/Outing/${id}`, { headers: this.getHeaders() });
   }
-
+  
+    private getHeaders() {
+      return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+    }
 }
 

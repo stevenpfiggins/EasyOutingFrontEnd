@@ -14,12 +14,12 @@ export class InterestsService {
   getInterests() {
     return this._http.get(`${ApiUrl}/Interests`, { headers: this.getHeaders() });
   }
-
-  private getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
-  }
-
+  
   createInterests(interests: Interests) {
     return this._http.post(`${ApiUrl}/Interests`, interests, { headers: this.getHeaders()});
   }
+  
+    private getHeaders() {
+      return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+    }
 }
