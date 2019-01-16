@@ -1,0 +1,41 @@
+<h1>Create an Outing</h1>
+
+<hr>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="outingForm">
+  <div>
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="OutingName" formControlName="OutingName" type="OutingName" required/>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="OutingDescription" formControlName="OutingDescription" type="OutingDescription" required/>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="OutingLocation" formControlName="OutingLocation" type="OutingLocation" required/>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="OutingDate" formControlName="OutingDate" type="OutingDate" required/>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput placeholder="OutingType" formControlName="OutingType" type="OutingType" required/>
+    </mat-form-field>
+  </div>
+  <div>
+      <mat-form-field>
+          <input matInput placeholder="CreatedBy" formControlName="CreatedBy" type="CreatedBy" required/>
+        </mat-form-field>
+  </div>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Outing</button>
+</form>
+
+<a mat-button routerLink="/outings">Back to List</a>

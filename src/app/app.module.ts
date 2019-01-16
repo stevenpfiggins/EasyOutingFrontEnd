@@ -20,13 +20,34 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { OutingsService } from './services/outings.service';
 import { OutingIndexComponent } from './components/outing/outing-index/outing-index.component';
+import { OutingCreateComponent } from './components/outing/outing-create/outing-create.component';
+import { InterestsCreateComponent } from './components/interests/interests-create/interests-create.component';
+import { InterestsService } from './services/interests.service';
+import { InterestsIndexComponent } from './components/interests/interests-index/interests-index.component';
+import { OutingDetailComponent } from './components/outing/outing-detail/outing-detail.component';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'outings', component: OutingIndexComponent},
-]
+
+  {
+  path: 'outings', children: [
+    {path: '', component: OutingIndexComponent},
+    {path: 'create', component: OutingCreateComponent},
+    {path: 'detail/:id', component: OutingDetailComponent}
+  ]
+},
+
+  {
+  path: 'interests', children: [
+    {path: '', component: InterestsIndexComponent},
+    {path: 'create', component: InterestsCreateComponent}
+  ]
+},
+{path: '**', component: RegistrationComponent }
+];
+
 
 @NgModule({
   declarations: [
@@ -36,6 +57,10 @@ const routes = [
     HeaderComponent,
     HomeComponent,
     OutingIndexComponent,
+    OutingCreateComponent,
+    InterestsCreateComponent,
+    InterestsIndexComponent,
+    OutingDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -54,8 +79,9 @@ const routes = [
   providers: [
     AuthService,
     OutingsService,
-
+    InterestsService
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
