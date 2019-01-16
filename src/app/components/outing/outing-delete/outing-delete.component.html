@@ -1,3 +1,33 @@
-<p>
-  outing-delete works!
-</p>
+<h1>Delete</h1>
+<h4>Are you sure you weant to delete this?</h4>
+
+<hr>
+<div *ngIf="Outing">
+  <div>
+    <label for="">OutingId</label>
+    <span>{{outing.outingEntityId</span>
+  </div>
+  <div>
+    <label for="">OutingName</label>
+    <span>{{outing.outingName}}</span>
+  </div>
+  <div>
+    <label for="">OutingDescription</label>
+    <span>{{outing.outingDescription}}</span>
+  </div>
+  <div>
+    <label for="">OutingLocation</label>
+    <span>{{outing.outingLocation}}</span>
+  </div>
+  <div>
+    <label for="">OutingDate</label>
+    <span>{{outing.outingDate}}</span>
+  </div>
+  <div>
+    <label for="">OutingType</label>
+    <span>{{outing.outingType}}</span>
+  </div>
+</div>
+
+<button mat-button color="warn" (click)="onDelete()">Delete</button>
+<button mat-button color="primary" routerLink="/outing">Back to List</button>
