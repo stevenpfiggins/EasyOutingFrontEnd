@@ -7,6 +7,7 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatTableModule,
+  MatCheckboxModule,
 } from "@angular/material";
 import { RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -89,7 +90,7 @@ const routes = [
     MatTableModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-
+    MatCheckboxModule
   ],
   providers: [
     AuthService,
