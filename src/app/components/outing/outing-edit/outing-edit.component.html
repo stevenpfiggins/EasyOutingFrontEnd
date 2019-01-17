@@ -1,4 +1,4 @@
-<h1>Edit Outing</h1>>
+<h1>Edit Outing</h1>
 <hr>
 
 <div *ngIf="outing">
@@ -6,40 +6,41 @@
     <div>
       <div hidden>
         <mat-form-field>
-          <input matInput placeholder="OutingEntityId" formControlName="OutingEntityId" required [value]="outing.outingEntityId"/>
+          <input matInput placeholder="OutingEntityId" formControlName="OutingEntityId" required ([value])="outing.outingEntityId"/>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="OutingName" formControlName="OutingName" required [value]="outing.outingName"/>
+          <input matInput placeholder="OutingName" formControlName="OutingName" [value]="outing.outingName"/>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="OutingDescription" formControlName="OutingDescription" required [value]="outing.outingDescription"/>
+          <input matInput placeholder="OutingDescription" formControlName="OutingDescription" [value]="outing.outingDescription"/>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="OutingLocation" formControlName="OutingLocation" required [value]="outing.outingLocation"/>
+          <input matInput placeholder="OutingLocation" formControlName="OutingLocation" [value]="outing.outingLocation"/>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="OutingDate" formControlName="OutingDate" required [value]="outing.outingDate"/>
+          <input matInput placeholder="OutingDate" formControlName="OutingDate" [value]="outing.outingDate"/>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="OutingType" formControlName="OutingType" required [value]="outing.outingtype"/>
+          <input matInput placeholder="OutingType" formControlName="OutingType" [value]="outing.outingType"/>
         </mat-form-field>
       </div>
       <div hidden>
         <mat-form-field>
-          <input matInput placeholder="CreatedBy" formControlName="CreatedBy" required [value]="outing.createdBy"/>
+          <input matInput placeholder="CreatedBy" formControlName="CreatedBy" [(value)]="outing.createdBy"/>
         </mat-form-field>
       </div>
     </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
   </form>
 </div>
 <a mat-button routerLink="/outings">Back to List</a>

@@ -26,7 +26,7 @@ export class OutingsService {
   }
 
   deleteOuting(id: number) {
-    return this._http.get(`${Api_Url}/Outing/${id}`, { headers: this.getHeaders() });
+    return this._http.delete(`${Api_Url}/Outing/${id}`, { headers: this.getHeaders() });
   }
   
     private getHeaders() {

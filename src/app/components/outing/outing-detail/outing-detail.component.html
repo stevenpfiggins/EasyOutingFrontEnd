@@ -17,11 +17,19 @@
   </div>
   <div>
     <label for="">Date: </label>
-    <span>{{outing.outingDate}}</span>
+    <span>{{outing.outingDate | date: 'longDate'}}</span>
     </div>
     <div>
       <label for="">Type: </label>
       <span>{{outing.outingType}}</span>
+    </div>
+    <div>
+      <label for="">Created By: </label>
+      <span>{{outing.createdBy}}</span>
+    </div>
+    <div>
+      <label for="">Created On: </label>
+      <span>{{outing.createdOn | date: 'longDate'}}</span>
     </div>
   </div>
 

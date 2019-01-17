@@ -10,7 +10,7 @@ import { Outing } from 'src/app/Models/Outing';
 })
 export class OutingDeleteComponent implements OnInit {
 
-  outing: Outing;
+  outing: any;
 
   constructor(private _outingService: OutingsService, private _ar: ActivatedRoute, private _router: Router) {
     this._ar.paramMap.subscribe(p => {
@@ -24,8 +24,8 @@ export class OutingDeleteComponent implements OnInit {
   }
 
   onDelete() {
-    this._outingService.deleteOuting(this.outing.OutingEntityId).subscribe(() => {
-      this._router.navigate(['/outing']);
+    this._outingService.deleteOuting(this.outing.outingEntityId).subscribe(() => {
+      this._router.navigate(['/outings']);
     });  
   }
 }

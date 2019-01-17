@@ -23,7 +23,7 @@ export class OutingEditComponent implements OnInit {
                 this._ar.paramMap.subscribe(p => {
                   this._outingService.getOuting(p.get('id')).subscribe((singleOuting: Outing) => {
                     this.outing = singleOuting;
-                    this.createForm();
+                    this.createForm(this.outing);
                   });
                 });
               }
@@ -31,15 +31,15 @@ export class OutingEditComponent implements OnInit {
   ngOnInit() {
   }
 
-  createForm() {
+  createForm(outing: any) {
     this.editOutingForm = this._form.group({
-      OutingEntityId: new FormControl(this.outing.OutingEntityId),
-      OutingName: new FormControl(this.outing.OutingName),
-      OutingDescription: new FormControl(this.outing.OutingDescription),
-      OutingLocation: new FormControl(this.outing.OutingLocation),
-      OutingDate: new FormControl(this.outing.OutingDate),
-      OutingType: new FormControl(this.outing.OutingType),
-      CreatedBy: new FormControl(this.outing.CreatedBy)
+      OutingEntityId: new FormControl(outing.outingEntityId),
+      OutingName: new FormControl(outing.outingName),
+      OutingDescription: new FormControl(outing.outingDescription),
+      OutingLocation: new FormControl(outing.outingLocation),
+      OutingDate: new FormControl(outing.outingDate),
+      OutingType: new FormControl(outing.outingType),
+      CreatedBy: new FormControl(outing.createdBy)
     });
   }
 
