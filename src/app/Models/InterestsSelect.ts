@@ -1,4 +1,4 @@
 export interface InterestsSelect {
-    value: number;
+    value: string;
     viewValue: string;
   }
