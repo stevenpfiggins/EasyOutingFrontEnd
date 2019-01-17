@@ -12,12 +12,7 @@ const ApiUrl = 'http.//locahost44311'
 })
 export class InterestsIndexComponent implements OnInit {
 
-  columnNames = ['interestsEntityId', 'UserName', 'UserLocation', 'Canoeing', 'Kayaking', 'Hiking', 'RockClimbing', 'Camping',
-  'Fishing', 'SightSeeing', 'FootBall', 'Basketball', 'Soccer', 'Baseball', 'Hockey', 'Tennis', 'Golf',
-  'Running', 'WeightLifting', 'Yoga', 'Gymnastics', 'Restaurants', 'Bars', 'Wineries', 'Consoles', 'BoardGames',
-  'CardGames', 'Arcades', 'Movies', 'Theatre', 'Concerts', 'Festivals', 'Clubs', 'Bowling', 'Zoo', 'Painting',
-  'Knitting', 'Pottery', 'Museums', 'Aquariums', 'Galleries'
-  ];
+  columnNames = ['UserName', 'UserLocation'];
 
   dataSource: MatTableDataSource<Interests>
 

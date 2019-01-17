@@ -1,6 +1,5 @@
 export interface Interests {
     InterestsEntityId: number;
-    userName: string;
     userLocation: string;
     canoeing: boolean;
     kayaking: boolean;

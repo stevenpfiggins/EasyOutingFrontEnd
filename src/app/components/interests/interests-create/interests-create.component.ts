@@ -21,7 +21,6 @@ export class InterestsCreateComponent implements OnInit {
 
   createForm() {
     this.interestForm = this._form.group({
-    userName: new FormControl,
     userLocation: new FormControl,
     canoeing: new FormControl,
     kayaking: new FormControl,
@@ -60,8 +59,7 @@ export class InterestsCreateComponent implements OnInit {
     pottery: new FormControl,
     museums: new FormControl,
     aquariums: new FormControl,
-    galleries: new FormControl,
-
+    galleries: new FormControl
     });
   }
 

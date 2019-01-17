@@ -95,7 +95,7 @@ const routes = [
     MatTableModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
     MatOptionModule,
     MatSelectModule,
     MatDatepickerModule,

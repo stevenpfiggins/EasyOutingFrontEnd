@@ -32,7 +32,6 @@ export class InterestsEditComponent implements OnInit {
 
   createForm() {
     this.editInterestsForm = this._form.group({
-    userName: new FormControl(this.interests.userName),
     userLocation: new FormControl(this.interests.userLocation),
     canoeing: new FormControl(this.interests.canoeing),
         kayaking: new FormControl(this.interests.kayaking),
@@ -78,7 +77,6 @@ export class InterestsEditComponent implements OnInit {
     onSubmit(form) {
       const updateInterests: Interests = {
         InterestsEntityId: form.value.InterestsEntityId,
-        userName: form.value.userName,
         userLocation: form.value.userLocation,
         canoeing: form.value.canoeing,
         kayaking: form.value.kayaking,
@@ -117,8 +115,7 @@ export class InterestsEditComponent implements OnInit {
         pottery: form.value.pottery,
         museums: form.value.museums,
         aquariums: form.value.aquariums,
-        galleries: form.value.galleries,
-        
+        galleries: form.value.galleries
       };
 
       this._interestsService.updateInterests(updateInterests).subscribe(d => {
