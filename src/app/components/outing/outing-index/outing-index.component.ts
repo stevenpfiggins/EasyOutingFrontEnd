@@ -3,6 +3,8 @@ import { OutingsService } from 'src/app/services/outings.service';
 import { Outing } from 'src/app/Models/Outing';
 import { MatTableDataSource } from '@angular/material';
 
+const Api_Url = 'http.//locahost44311'
+
 @Component({
   selector: 'app-outing-index',
   templateUrl: './outing-index.component.html',
