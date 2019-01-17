@@ -10,12 +10,12 @@ import { Interests } from 'src/app/Models/Interests';
 })
 export class InterestsDeleteComponent implements OnInit {
 
-  interest: any;
+  interests: any;
 
   constructor(private _interestsService: InterestsService, private _ar: ActivatedRoute, private _router: Router) {
     this._ar.paramMap.subscribe(p => {
       this._interestsService.getSingleInterests(p.get('id')).subscribe((singleInterest: Interests) => {
-        this.interest = singleInterest;
+        this.interests = singleInterest;
       });
     });
    }
@@ -24,7 +24,7 @@ export class InterestsDeleteComponent implements OnInit {
   }
 
   onDelete() {
-    this._interestsService.deleteInterests(this.interest.interestId).subscribe(() => {
+    this._interestsService.deleteInterests(this.interests.interestId).subscribe(() => {
       this._router.navigate(['/interests']);
     });
   }

@@ -7,6 +7,7 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatTableModule,
+  MatCheckboxModule,
   MatOptionModule,
   MatSelectModule,
   MatDatepickerModule,
@@ -94,6 +95,7 @@ const routes = [
     MatTableModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
+    MatCheckboxModule
     MatOptionModule,
     MatSelectModule,
     MatDatepickerModule,
