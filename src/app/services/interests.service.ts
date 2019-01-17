@@ -14,12 +14,24 @@ export class InterestsService {
   getInterests() {
     return this._http.get(`${ApiUrl}/Interests`, { headers: this.getHeaders() });
   }
+
+  getSingleInterests(id: string) {
+    return this._http.get(`${ApiUrl}/Interests/${id}`, { headers: this.getHeaders() });
+  }
   
   createInterests(interests: Interests) {
     return this._http.post(`${ApiUrl}/Interests`, interests, { headers: this.getHeaders()});
   }
   
-    private getHeaders() {
-      return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
-    }
+  updateInterests(interests: Interests) {
+    return this._http.put(`${ApiUrl}/Interests`, interests, { headers: this.getHeaders() });
+  }
+
+  deleteInterests(id:number) {
+    return this._http.delete(`${ApiUrl}/Interests/${id}`, { headers: this.getHeaders() });
+  }
+
+  private getHeaders() {
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('token')}`);
+  }
 }

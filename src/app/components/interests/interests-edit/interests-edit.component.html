@@ -1,0 +1,27 @@
+<h1>Edit</h1>
+<hr>
+
+<div *ngIf="interests">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editInterestsForm">
+    <div>
+      <div hidden>
+        <mat-form-field>
+          <input matInput placeholder="InterestsEntityId" formControlName="InterestsEntityId" type="InteretsEntityId" required [value]="interests.InterestsEntityId"/>
+        </mat-form-field>
+      </div>
+      
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="UserName" formControlName="UserName" type="UserName" required [value]="interests.UserName"/>
+        </mat-form-field>
+      </div>
+      
+      <div>
+        <mat-form-field>
+          <input matInput placeholder="UserLocation" formControlName="UserLocation" type="UserLocation" required [value]="interests.UserLocation"/>
+        </mat-form-field>
+      </div>
+      
+    </div>
+  </form>
+</div>

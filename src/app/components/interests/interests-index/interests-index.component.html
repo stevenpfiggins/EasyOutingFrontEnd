@@ -17,6 +17,21 @@
       <mat-cell *matCellDef="let interests"> {{interests.userLocation}}</mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let interests" routerLink="/interests/detail/{{interests.InterestsEntityId}}">
+      <i class="material-icons">library_books</i>
+    </mat-cell>
+    </ng-container>
+
+    <ng-container MatColumnDef="buttons">
+      <mat-header-cell *matCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let interests">
+      <i routerLink="/interests/edit/{{interests.InterestsEntityId}}">edit</i>
+      </mat-cell>
+    </ng-container>
+
+
   </mat-table>
 </div>
 
