@@ -2,11 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OutingsService } from '../../../services/outings.service';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-
-export interface InterestsSelect {
-  value: number;
-  viewValue: string;
-}
+import { InterestsSelect } from 'src/app/Models/InterestsSelect';
 
 @Component({
   selector: 'app-outing-create',

@@ -26,17 +26,18 @@
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="OutingDate" formControlName="OutingDate" [value]="outing.outingDate"/>
+          <input matInput [matDatepicker]="OutingDate" placeholder="Choose a date" formControlName="OutingDate" [value]="outing.outingDate"/>
+          <mat-datepicker-toggle matSuffix [for]="OutingDate"></mat-datepicker-toggle>
+          <mat-datepicker #OutingDate></mat-datepicker>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="OutingType" formControlName="OutingType" [value]="outing.outingType"/>
-        </mat-form-field>
-      </div>
-      <div hidden>
-        <mat-form-field>
-          <input matInput placeholder="CreatedBy" formControlName="CreatedBy" [(value)]="outing.createdBy"/>
+          <mat-select placeholder="Outing Type" formControlName="OutingType" type="OutingType" [value]="outing.outingType">
+            <mat-option *ngFor="let selection of interestsSelect" [value]="selection.value">
+              {{selection.viewValue}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
     </div>

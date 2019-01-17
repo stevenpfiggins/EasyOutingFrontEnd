@@ -5,5 +5,4 @@ export interface Outing {
     OutingLocation: string;
     OutingDate: Date;
     OutingType: number;
-    CreatedBy: string;
 }
