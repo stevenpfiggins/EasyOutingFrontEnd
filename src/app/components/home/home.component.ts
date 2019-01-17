@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MatTableDataSource } from '@angular/material';
+import { Outing } from 'src/app/Models/Outing';
+import { OutingsService } from 'src/app/services/outings.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  outings: Object;
 
-  constructor() { }
+  constructor(private _outingService: OutingsService) { }
 
   ngOnInit() {
+    this._outingService.getOutings().subscribe(o => this.outings = o)
   }
 
 }

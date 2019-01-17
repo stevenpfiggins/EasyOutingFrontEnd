@@ -12,22 +12,17 @@ export class HeaderComponent implements OnInit {
   username: string;
   isLoggedIn: boolean
 
-  constructor(public authService: AuthService, private _router: Router) { }
+  constructor(public _authService: AuthService, private _router: Router) { }
 
   ngOnInit() {
-    this.authService.userInfo.subscribe((d: UserData) => {
-      console.log('the value of data', d);
-      this.username = d.user;
-      this.isLoggedIn = d.isloggedin;
-    });
+    this.isLoggedIn = this._authService.currentUser();
   }
 
   onLogout() {
-    this.authService.logout();
+    this._authService.logout();
+    this.isLoggedIn = false;
+    this._router.navigate(['/login'])
   }
 
 }
-export interface UserData {
-  user: string;
-  isloggedin: boolean;
-}
+

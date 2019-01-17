@@ -8,6 +8,11 @@ import {
   MatInputModule,
   MatTableModule,
   MatCheckboxModule,
+  MatOptionModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatCardModule,  
 } from "@angular/material";
 import { RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -91,6 +96,11 @@ const routes = [
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     MatCheckboxModule
+    MatOptionModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatCardModule,
   ],
   providers: [
     AuthService,

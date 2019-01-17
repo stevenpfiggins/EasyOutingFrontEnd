@@ -10,7 +10,9 @@ const Api_Url = "https://localhost:44311"
 
 @Injectable()
 export class AuthService {
-  userInfo = new Subject<{}>();
+  userInfo: Token;
+  isLoggedIn = new Subject<boolean>();
+  loginInfo: UserInfo;
 
   constructor(private _http: HttpClient, private _router: Router) { }
 
@@ -20,31 +22,26 @@ export class AuthService {
 
     login(loginInfo) {
 
-      return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: Token) => {
-        localStorage.setItem('id_token', token.access_token);
-        this.userInfo.next({
-          isloggedin: true,
-          user: token.userName
-        });
+      return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
+        localStorage.setItem('token', token.token);
+        this.isLoggedIn.next(true);
         this._router.navigate(['/home'])
       });
     }
 
-    currentUser(): Observable<Object> {
-      if (!localStorage.getItem('id_token')) {return new Observable(observer => observer.next(false));}
-      return this._http.get(`${Api_Url}/api/Account/UserInfo`, {headers: this.setHeader() })
+    currentUser(): boolean {
+      if(!localStorage.getItem('token')) {return false;}
+      return true;
     }
 
     logout() {
       localStorage.clear();
-      this.userInfo.next(false);
-      console.log('here');
-      this._router.navigate(['/login']);
+      this.isLoggedIn.next(false);
 
-      return this._http.post(`${Api_Url}/api/Auth/Logout`, {headers: this.setHeader()});
-    }
+      const authHeader = new HttpHeaders().set('Authorization', `Bearer${localStorage.getItem('token')}`);
 
-    private setHeader(): HttpHeaders {
-      return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+      this._http.post(`${Api_Url}/api/Account/Logout`, {header: authHeader});
+      this._router.navigate(['/login'])
     }
-}
+  }
+
