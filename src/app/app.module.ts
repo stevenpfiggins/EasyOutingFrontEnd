@@ -10,7 +10,8 @@ import {
   MatOptionModule,
   MatSelectModule,
   MatDatepickerModule,
-  MatNativeDateModule,  
+  MatNativeDateModule,
+  MatCardModule,  
 } from "@angular/material";
 import { RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -97,6 +98,7 @@ const routes = [
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatCardModule,
   ],
   providers: [
     AuthService,

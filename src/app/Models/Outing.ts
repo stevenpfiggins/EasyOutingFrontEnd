@@ -4,5 +4,5 @@ export interface Outing {
     OutingDescription: string;
     OutingLocation: string;
     OutingDate: Date;
-    OutingType: number;
+    OutingType: string;
 }
