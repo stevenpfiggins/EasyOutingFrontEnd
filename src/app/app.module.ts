@@ -7,6 +7,10 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatTableModule,
+  MatOptionModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule,  
 } from "@angular/material";
 import { RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -80,7 +84,10 @@ const routes = [
     MatTableModule,
     RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-
+    MatOptionModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [
     AuthService,
