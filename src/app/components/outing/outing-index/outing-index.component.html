@@ -7,11 +7,6 @@
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-    <ng-container matColumnDef="OutingEntityId">
-      <mat-header-cell *matHeaderCellDef>Outing #</mat-header-cell>
-      <mat-cell *matCellDef="let outing">{{outing.outingEntityId}}</mat-cell>
-    </ng-container>
-
     <ng-container matColumnDef="OutingName">
       <mat-header-cell *matHeaderCellDef>Outing Name</mat-header-cell>
       <mat-cell *matCellDef="let outing">{{outing.outingName}}</mat-cell>
@@ -19,7 +14,12 @@
 
     <ng-container matColumnDef="OutingDate">
       <mat-header-cell *matHeaderCellDef>Outing Date</mat-header-cell>
-      <mat-cell *matCellDef="let outing">{{outing.outingDate}}</mat-cell>
+      <mat-cell *matCellDef="let outing">{{outing.outingDate | date: 'longDate'}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="OutingLocation">
+      <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
+      <mat-cell *matCellDef="let outing">{{outing.outingLocation}}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="OutingType">
@@ -27,20 +27,25 @@
       <mat-cell *matCellDef="let outing">{{outing.outingType}}</mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="CreatedOn">
+      <mat-header-cell *matHeaderCellDef>Date Created</mat-header-cell>
+      <mat-cell *matCellDef="let outing">{{outing.createdOn | date: 'longDate'}}</mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="buttons">
       <mat-header-cell *matHeaderCellDef> </mat-header-cell>
       <mat-cell *matCellDef="let outing">
-        <i mat-icon class="material-icons" routerLink="/outing/edit/{{outing.EntityId}}">edit</i>
-        <i class="material-icons" routerLink="/outing/delete/{{outing.OutingEntityId}}">delete</i>
-
-    <ng-container matColumnDef="details">
-      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let outing" routerLink="/outings/detail/{{outing.OutingId}}">
-      <i class="material-icons">library books</i>
-    </mat-cell>
-    </ng-container>
+        <i mat-icon class="material-icons" routerLink="/outings/edit/{{outing.outingEntityId}}">edit</i>
+        <i class="material-icons" routerLink="/outings/delete/{{outing.outingEntityId}}">delete</i>
       </mat-cell>
     </ng-container>
-
+  
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let outing" routerLink="/outings/detail/{{outing.outingEntityId}}">
+      <i class="material-icons">library_books</i>
+    </mat-cell>
+    </ng-container>
+    
   </mat-table>
 </div>

@@ -1,5 +1,5 @@
 export interface Outing {
-  OutingEntityId: number;
+    OutingEntityId: number;
     OutingName: string;
     OutingDescription: string;
     OutingLocation: string;

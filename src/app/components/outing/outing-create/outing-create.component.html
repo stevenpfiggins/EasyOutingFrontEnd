@@ -6,32 +6,38 @@
   <div>
   <div>
     <mat-form-field>
-      <input matInput placeholder="OutingName" formControlName="OutingName" type="OutingName" required/>
+      <input matInput placeholder="Name" formControlName="OutingName" type="OutingName" required/>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
-      <input matInput placeholder="OutingDescription" formControlName="OutingDescription" type="OutingDescription" required/>
+      <input matInput placeholder="Description" formControlName="OutingDescription" type="OutingDescription" required/>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
-      <input matInput placeholder="OutingLocation" formControlName="OutingLocation" type="OutingLocation" required/>
+      <input matInput placeholder="Location" formControlName="OutingLocation" type="OutingLocation" required/>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
-      <input matInput placeholder="OutingDate" formControlName="OutingDate" type="OutingDate" required/>
+      <input matInput [matDatepicker]="OutingDate" placeholder="Choose a date" formControlName="OutingDate" type="OutingDate" required/>
+      <mat-datepicker-toggle matSuffix [for]="OutingDate"></mat-datepicker-toggle>
+      <mat-datepicker #OutingDate></mat-datepicker>
     </mat-form-field>
   </div>
   <div>
     <mat-form-field>
-      <input matInput placeholder="OutingType" formControlName="OutingType" type="OutingType" required/>
+      <mat-select placeholder="Outing Type" formControlName="OutingType" type="OutingType" required>
+        <mat-option *ngFor="let selection of interestsSelect" [value]="selection.value">
+          {{selection.viewValue}}
+        </mat-option>
+      </mat-select>
     </mat-form-field>
   </div>
   <div>
       <mat-form-field>
-          <input matInput placeholder="CreatedBy" formControlName="CreatedBy" type="CreatedBy" required/>
+          <input matInput placeholder="Created By" formControlName="CreatedBy" type="CreatedBy" required/>
         </mat-form-field>
   </div>
   </div>
