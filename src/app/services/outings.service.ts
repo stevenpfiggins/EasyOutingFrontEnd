@@ -35,5 +35,7 @@ export class OutingsService {
     return this._http.get(`${Api_Url}/Outing/${id}`, { headers: this.getHeaders() });
   }
 
+  
+
 }
 

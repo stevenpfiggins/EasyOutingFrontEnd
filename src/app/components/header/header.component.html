@@ -1,6 +1,7 @@
 <mat-toolbar color="primary">
   <span>Easy Outings</span>
   <button mat-button routerLink="outings" *ngIf="isLoggedIn">Outings</button>
+  <button mat-button routerLink="interests" *ngIf="isLoggedIn">Interests</button>
   <span class="example-fill-remaining-space"></span>
   <div *ngIf="isLoggedIn; else auth">
     <span>Welcome {{username}}</span>
