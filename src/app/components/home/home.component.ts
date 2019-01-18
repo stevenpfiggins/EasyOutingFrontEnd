@@ -1,6 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
-import { Outing } from 'src/app/Models/Outing';
 import { OutingsService } from 'src/app/services/outings.service';
 
 @Component({
