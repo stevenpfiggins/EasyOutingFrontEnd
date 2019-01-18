@@ -32,6 +32,7 @@ export class InterestsEditComponent implements OnInit {
 
   createForm() {
     this.editInterestsForm = this._form.group({
+      interestsEntityId: new FormControl(this.interests.interestsEntityId),
       userLocation: new FormControl(this.interests.userLocation),
       canoeing: new FormControl(this.interests.canoeing),
       kayaking: new FormControl(this.interests.kayaking),
@@ -111,7 +112,7 @@ export class InterestsEditComponent implements OnInit {
       bowling: form.value.bowling,
       zoo: form.value.zoo,
       painting: form.value.painting,
-      knitting: form.value.kntting,
+      knitting: form.value.knitting,
       pottery: form.value.pottery,
       museums: form.value.museums,
       aquariums: form.value.aquariums,

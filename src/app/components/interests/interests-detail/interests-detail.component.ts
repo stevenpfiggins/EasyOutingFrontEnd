@@ -18,6 +18,7 @@ export class InterestsDetailComponent implements OnInit {
     this._activatedRoute.paramMap.subscribe(routeData => {
       this._interestsService.getSingleInterests(routeData.get('id')).subscribe((singleInterests: Interests) => {
         this.interests = singleInterests;
+        console.log(this.interests)
       });
     });
   }
