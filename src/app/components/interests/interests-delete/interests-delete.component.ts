@@ -24,7 +24,7 @@ export class InterestsDeleteComponent implements OnInit {
   }
 
   onDelete() {
-    this._interestsService.deleteInterests(this.interests.interestId).subscribe(() => {
+    this._interestsService.deleteInterests(this.interests.ownerId).subscribe(() => {
       this._router.navigate(['/interests']);
     });
   }
