@@ -21,7 +21,11 @@
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="OutingLocation" formControlName="OutingLocation" [value]="outing.outingLocation"/>
+          <mat-select placeholder="Location" formControlName="OutingLocation" type="OutingLocation" [value]="outing.outingLocation">
+            <mat-option *ngFor="let selection of locationSelect" [value]="selection.value">
+              {{selection.viewValue}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
       </div>
       <div>
