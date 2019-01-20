@@ -18,7 +18,7 @@ export class OutingIndexComponent implements OnInit {
   constructor(private _outingService: OutingsService) { }
 
   ngOnInit() {
-    this._outingService.getOutings().subscribe((outings: Outing[]) => {
+    this._outingService.getOutingsByUser().subscribe((outings: Outing[]) => {
       this.dataSource = new MatTableDataSource<Outing>(outings);
     })
   }

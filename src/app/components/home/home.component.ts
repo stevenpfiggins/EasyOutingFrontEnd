@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { OutingsService } from 'src/app/services/outings.service';
+import { HomeService } from 'src/app/services/home.service';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +9,10 @@ import { OutingsService } from 'src/app/services/outings.service';
 export class HomeComponent implements OnInit {
   outings: Object;
 
-  constructor(private _outingService: OutingsService) { }
+  constructor(private _homeService: HomeService) { }
 
   ngOnInit() {
-    this._outingService.getOutings().subscribe(o => this.outings = o)
+    this._homeService.getOutingsByInterestsMatch().subscribe(i => this.outings = i)
   }
 
 }

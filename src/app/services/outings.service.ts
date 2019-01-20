@@ -13,6 +13,10 @@ export class OutingsService {
     return this._http.get(`${Api_Url}/Outing`, { headers: this.getHeaders() });
   }
 
+  getOutingsByUser() {
+    return this._http.get(`${Api_Url}/Outing/MyOutings`, { headers: this.getHeaders() });
+  }
+
   createOuting(outing: Outing) {
     return this._http.post(`${Api_Url}/Outing`, outing, { headers: this.getHeaders() });
   }
