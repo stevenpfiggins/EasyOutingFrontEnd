@@ -19,7 +19,7 @@ export class InterestsIndexComponent implements OnInit {
   constructor(private _interestService: InterestsService) { }
 
   ngOnInit() {
-    this._interestService.getInterests().subscribe((interests: Interests[]) => {
+    this._interestService.getInterestsByUser().subscribe((interests: Interests[]) => {
       this.dataSource = new MatTableDataSource<Interests>(interests);
     });
   }
