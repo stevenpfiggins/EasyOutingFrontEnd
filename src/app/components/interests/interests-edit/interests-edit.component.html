@@ -2,7 +2,7 @@
 <hr>
 
 <div *ngIf="interests">
-  <form #f="ngForm" (ngSubmit)="onSubmit()" [formGroup]="editInterestsForm">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editInterestsForm">
     <div>
       <div hidden>
         <mat-form-field>
