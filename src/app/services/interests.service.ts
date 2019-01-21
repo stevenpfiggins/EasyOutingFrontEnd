@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Interests } from '../Models/Interests';
 
-const ApiUrl = "https://localhost:44311/api";
+const ApiUrl = "https://easyoutings.azurewebsites.net/api";
 
 @Injectable({
   providedIn: 'root'
