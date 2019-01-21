@@ -3,8 +3,6 @@ import { InterestsService } from '../../../services/interests.service';
 import { Interests } from '../../../Models/Interests';
 import { MatTableDataSource } from '@angular/material';
 
-const ApiUrl = 'http.//locahost:44311'
-
 @Component({
   selector: 'app-interests-index',
   templateUrl: './interests-index.component.html',
@@ -12,7 +10,7 @@ const ApiUrl = 'http.//locahost:44311'
 })
 export class InterestsIndexComponent implements OnInit {
 
-  columnNames = ['OwnerId', 'UserName', 'UserLocation', 'buttons', 'details'];
+  columnNames = ['UserName', 'UserLocation', 'buttons', 'details'];
 
   dataSource: MatTableDataSource<Interests>
 

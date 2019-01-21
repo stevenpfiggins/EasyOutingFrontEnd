@@ -6,7 +6,7 @@ import { Observable, Subject } from 'rxjs';
 import { RegisterUser } from '../Models/RegisterUser';
 import { Router } from "@angular/router";
 
-const Api_Url = "https://localhost:44311"
+const Api_Url = "https://easyoutings.azurewebsites.net"
 
 @Injectable()
 export class AuthService {

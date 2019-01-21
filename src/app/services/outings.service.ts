@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Outing } from '../Models/Outing';
 
-const Api_Url = "https://localhost:44311/api"
+const Api_Url = "https://easyoutings.azurewebsites.net/api"
 
 @Injectable()
 export class OutingsService {

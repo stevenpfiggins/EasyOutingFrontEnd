@@ -82,7 +82,7 @@ const routes = [
     OutingDeleteComponent,
     InterestsDetailComponent,
     InterestsEditComponent,
-    InterestsDeleteComponent
+    InterestsDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -106,7 +106,8 @@ const routes = [
   providers: [
     AuthService,
     OutingsService,
-    InterestsService
+    InterestsService,
+    AuthGuard,
   ],
   
   bootstrap: [AppComponent]
