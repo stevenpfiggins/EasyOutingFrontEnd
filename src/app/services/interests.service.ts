@@ -15,6 +15,10 @@ export class InterestsService {
     return this._http.get(`${ApiUrl}/Interests`, { headers: this.getHeaders() });
   }
 
+  getInterestsByUser() {
+    return this._http.get(`${ApiUrl}/Interests/MyInterests`, { headers: this.getHeaders() });
+  }
+
   getSingleInterests(id: string) {
     return this._http.get(`${ApiUrl}/Interests/${id}`, { headers: this.getHeaders() });
   }

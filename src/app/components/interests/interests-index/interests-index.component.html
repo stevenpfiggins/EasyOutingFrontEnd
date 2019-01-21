@@ -8,6 +8,11 @@
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
+    <ng-container matColumnDef="OwnerId">
+      <mat-header-cell *matHeaderCellDef>Id </mat-header-cell>
+      <mat-cell *matCellDef="let interests"> {{interests.ownerId}} </mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="UserName">
       <mat-header-cell *matHeaderCellDef>User Name </mat-header-cell>
       <mat-cell *matCellDef="let interests"> {{interests.userName}} </mat-cell>
@@ -27,7 +32,7 @@
     
       <ng-container matColumnDef="details">
         <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-        <mat-cell *matCellDef="let interests" routerLink="/interests/detail/{{interests.interestsEntityId}}">
+        <mat-cell *matCellDef="let interests" routerLink="/interests/detail/{{interests.ownerId}}">
         <i mat-icon class="material-icons">library_books</i>
       </mat-cell>
       </ng-container>

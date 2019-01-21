@@ -6,7 +6,11 @@
 
     <div>
       <mat-form-field>
-        <input matInput placeholder="Location" formControlName="userLocation" type="userLocation" required />
+        <mat-select placeholder="Location" formControlName="UserLocation" type="UserLocation" required>
+          <mat-option *ngFor="let selection of locationSelect" [value]="selection.value">
+            {{selection.viewValue}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
     </div>
     <h4>Outdoors & Adventure</h4>

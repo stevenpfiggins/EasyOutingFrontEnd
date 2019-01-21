@@ -12,14 +12,14 @@ const ApiUrl = 'http.//locahost:44311'
 })
 export class InterestsIndexComponent implements OnInit {
 
-  columnNames = ['UserName', 'UserLocation', 'buttons', 'details'];
+  columnNames = ['OwnerId', 'UserName', 'UserLocation', 'buttons', 'details'];
 
   dataSource: MatTableDataSource<Interests>
 
   constructor(private _interestService: InterestsService) { }
 
   ngOnInit() {
-    this._interestService.getInterests().subscribe((interests: Interests[]) => {
+    this._interestService.getInterestsByUser().subscribe((interests: Interests[]) => {
       this.dataSource = new MatTableDataSource<Interests>(interests);
     });
   }
