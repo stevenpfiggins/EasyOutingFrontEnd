@@ -3,7 +3,6 @@ import { OutingsService } from 'src/app/services/outings.service';
 import { Outing } from 'src/app/Models/Outing';
 import { MatTableDataSource } from '@angular/material';
 
-const Api_Url = 'http.//locahost44311'
 
 @Component({
   selector: 'app-outing-index',
@@ -12,7 +11,7 @@ const Api_Url = 'http.//locahost44311'
 })
 export class OutingIndexComponent implements OnInit {
 
-  columnNames = ['OutingName', 'OutingDate', 'OutingLocation', 'OutingType', 'CreatedOn', 'details', 'buttons'];
+  columnNames = ['outingName', 'outingDate', 'outingLocation', 'outingType', 'createdOn', 'details', 'buttons'];
   dataSource: MatTableDataSource<Outing>
 
   constructor(private _outingService: OutingsService) { }

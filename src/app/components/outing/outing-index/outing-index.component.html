@@ -7,27 +7,27 @@
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-    <ng-container matColumnDef="OutingName">
+    <ng-container matColumnDef="outingName">
       <mat-header-cell *matHeaderCellDef>Outing Name</mat-header-cell>
       <mat-cell *matCellDef="let outing">{{outing.outingName}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="OutingDate">
+    <ng-container matColumnDef="outingDate">
       <mat-header-cell *matHeaderCellDef>Outing Date</mat-header-cell>
       <mat-cell *matCellDef="let outing">{{outing.outingDate | date: 'longDate'}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="OutingLocation">
+    <ng-container matColumnDef="outingLocation">
       <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
       <mat-cell *matCellDef="let outing">{{outing.outingLocation}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="OutingType">
+    <ng-container matColumnDef="outingType">
       <mat-header-cell *matHeaderCellDef>Outing Type</mat-header-cell>
       <mat-cell *matCellDef="let outing">{{outing.outingType}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="CreatedOn">
+    <ng-container matColumnDef="createdOn">
       <mat-header-cell *matHeaderCellDef>Date Created</mat-header-cell>
       <mat-cell *matCellDef="let outing">{{outing.createdOn | date: 'longDate'}}</mat-cell>
     </ng-container>

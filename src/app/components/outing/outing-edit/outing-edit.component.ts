@@ -130,23 +130,23 @@ export class OutingEditComponent implements OnInit {
 
   createForm(outing: any) {
     this.editOutingForm = this._form.group({
-      OutingEntityId: new FormControl(outing.outingEntityId),
-      OutingName: new FormControl(outing.outingName),
-      OutingDescription: new FormControl(outing.outingDescription),
-      OutingLocation: new FormControl(outing.outingLocation),
-      OutingDate: new FormControl(outing.outingDate),
-      OutingType: new FormControl(outing.outingType),
+      outingEntityId: new FormControl(outing.outingEntityId),
+      outingName: new FormControl(outing.outingName),
+      outingDescription: new FormControl(outing.outingDescription),
+      outingLocation: new FormControl(outing.outingLocation),
+      outingDate: new FormControl(outing.outingDate),
+      outingType: new FormControl(outing.outingType),
     });
   }
 
   onSubmit(form) {
     const updateOuting: Outing ={
-      OutingEntityId: form.value.OutingEntityId,
-      OutingName: form.value.OutingName,
-      OutingDescription: form.value.OutingDescription,
-      OutingLocation: form.value.OutingLocation,
-      OutingDate: form.value.OutingDate,
-      OutingType: form.value.OutingType,
+      outingEntityId: form.value.outingEntityId,
+      outingName: form.value.outingName,
+      outingDescription: form.value.outingDescription,
+      outingLocation: form.value.outingLocation,
+      outingDate: form.value.outingDate,
+      outingType: form.value.outingType,
     };
     this._outingService.updateOuting(updateOuting).subscribe(d => {
       this._router.navigate(['/outings']);

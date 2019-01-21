@@ -1,8 +1,8 @@
 export interface Outing {
-    OutingEntityId: number;
-    OutingName: string;
-    OutingDescription: string;
-    OutingLocation: string;
-    OutingDate: Date;
-    OutingType: string;
+    outingEntityId: number;
+    outingName: string;
+    outingDescription: string;
+    outingLocation: string;
+    outingDate: Date;
+    outingType: string;
 }

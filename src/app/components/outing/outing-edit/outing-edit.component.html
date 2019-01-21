@@ -6,22 +6,22 @@
     <div>
       <div hidden>
         <mat-form-field>
-          <input matInput placeholder="OutingEntityId" formControlName="OutingEntityId" required ([value])="outing.outingEntityId"/>
+          <input matInput placeholder="OutingEntityId" formControlName="outingEntityId" required ([value])="outing.outingEntityId"/>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="OutingName" formControlName="OutingName" [value]="outing.outingName"/>
+          <input matInput placeholder="Name" formControlName="outingName" [value]="outing.outingName"/>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="OutingDescription" formControlName="OutingDescription" [value]="outing.outingDescription"/>
+          <input matInput placeholder="Description" formControlName="outingDescription" [value]="outing.outingDescription"/>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <mat-select placeholder="Location" formControlName="OutingLocation" type="OutingLocation" [value]="outing.outingLocation">
+          <mat-select placeholder="Location" formControlName="outingLocation" type="outingLocation" [value]="outing.outingLocation">
             <mat-option *ngFor="let selection of locationSelect" [value]="selection.value">
               {{selection.viewValue}}
             </mat-option>
@@ -30,14 +30,14 @@
       </div>
       <div>
         <mat-form-field>
-          <input matInput [matDatepicker]="OutingDate" placeholder="Choose a date" formControlName="OutingDate" [value]="outing.outingDate"/>
-          <mat-datepicker-toggle matSuffix [for]="OutingDate"></mat-datepicker-toggle>
-          <mat-datepicker #OutingDate></mat-datepicker>
+          <input matInput [matDatepicker]="outingDate" placeholder="Choose a date" formControlName="outingDate" [value]="outing.outingDate"/>
+          <mat-datepicker-toggle matSuffix [for]="outingDate"></mat-datepicker-toggle>
+          <mat-datepicker #outingDate></mat-datepicker>
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <mat-select placeholder="Outing Type" formControlName="OutingType" type="OutingType" [value]="outing.outingType">
+          <mat-select placeholder="Outing Type" formControlName="outingType" type="outingType" [value]="outing.outingType">
             <mat-option *ngFor="let selection of interestsSelect" [value]="selection.value">
               {{selection.viewValue}}
             </mat-option>

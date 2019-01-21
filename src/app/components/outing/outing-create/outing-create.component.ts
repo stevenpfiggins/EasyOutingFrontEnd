@@ -118,12 +118,12 @@ export class OutingCreateComponent implements OnInit {
 
   createForm(){
     this.outingForm = this._form.group({
-      OutingName: new FormControl,
-      OutingDescription: new FormControl,
-      OutingLocation: new FormControl,
-      OutingDate: new FormControl,
-      OutingType: new FormControl,
-      CreatedBy: new FormControl
+      outingName: new FormControl,
+      outingDescription: new FormControl,
+      outingLocation: new FormControl,
+      outingDate: new FormControl,
+      outingType: new FormControl,
+      createdBy: new FormControl
     });
   }
 
