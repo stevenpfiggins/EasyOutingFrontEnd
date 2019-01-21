@@ -36,6 +36,7 @@ import { OutingDeleteComponent } from './components/outing/outing-delete/outing-
 import { InterestsDetailComponent } from './components/interests/interests-detail/interests-detail.component';
 import { InterestsEditComponent } from './components/interests/interests-edit/interests-edit.component';
 import { InterestsDeleteComponent } from './components/interests/interests-delete/interests-delete.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
@@ -44,16 +45,16 @@ const routes = [
 
   {
   path: 'outings', children: [
-    {path: '', component: OutingIndexComponent},
-    {path: 'create', component: OutingCreateComponent},
+    {path: '', canActivate: [AuthGuard], component: OutingIndexComponent},
+    {path: 'create', canActivate: [AuthGuard], component: OutingCreateComponent},
     {path: 'detail/:id', component: OutingDetailComponent},
-    {path: 'edit/:id', component: OutingEditComponent},
-    {path: 'delete/:id', component: OutingDeleteComponent}
+    {path: 'edit/:id', canActivate: [AuthGuard], component: OutingEditComponent},
+    {path: 'delete/:id', canActivate: [AuthGuard], component: OutingDeleteComponent}
   ]
 },
 
   {
-  path: 'interests', children: [
+  path: 'interests', canActivate: [AuthGuard], children: [
     {path: '', component: InterestsIndexComponent},
     {path: 'create', component: InterestsCreateComponent},
     {path: 'detail/:id', component: InterestsDetailComponent},
