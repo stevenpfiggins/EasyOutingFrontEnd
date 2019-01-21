@@ -1,0 +1,38 @@
+<h1>Index</h1>
+<a mat-raised-button color="primary" routerLink="/interests/create">Create New</a>
+<hr>
+
+<div>
+
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+    
+    <ng-container matColumnDef="UserName">
+      <mat-header-cell *matHeaderCellDef>User Name </mat-header-cell>
+      <mat-cell *matCellDef="let interests"> {{interests.userName}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="UserLocation">
+      <mat-header-cell *matHeaderCellDef>User Location</mat-header-cell>
+      <mat-cell *matCellDef="let interests"> {{interests.userLocation}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="buttons">
+        <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+        <mat-cell *matCellDef="let interests">
+          <i mat-icon class="material-icons" routerLink="/interests/edit/{{interests.interestsEntityId}}">edit</i>
+        </mat-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="details">
+        <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+        <mat-cell *matCellDef="let interests" routerLink="/interests/detail/{{interests.ownerId}}">
+        <i mat-icon class="material-icons">library_books</i>
+      </mat-cell>
+      </ng-container>
+
+
+  </mat-table>
+</div>
+

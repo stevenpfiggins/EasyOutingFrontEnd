@@ -6,11 +6,9 @@ import { Observable, Subject } from 'rxjs';
 import { RegisterUser } from '../Models/RegisterUser';
 import { Router } from "@angular/router";
 
-const Api_Url = "https://localhost:44311"
+const Api_Url = "https://easyoutings.azurewebsites.net"
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
   userInfo: Token;
   isLoggedIn = new Subject<boolean>();
@@ -23,20 +21,27 @@ export class AuthService {
     }
 
     login(loginInfo) {
+
       return this._http.post(`${Api_Url}/api/Auth/Login`, loginInfo).subscribe( (token: any) => {
         localStorage.setItem('token', token.token);
         this.isLoggedIn.next(true);
         this._router.navigate(['/home'])
-      })
+      });
+    }
+
+    currentUser(): boolean {
+      if(!localStorage.getItem('token')) {return false;}
+      return true;
     }
 
     logout() {
       localStorage.clear();
       this.isLoggedIn.next(false);
 
-      const authHeader = new HttpHeaders().set('Authorization', `Bearer ${localStorage.getitem('token')}`);
+      const authHeader = new HttpHeaders().set('Authorization', `Bearer${localStorage.getItem('token')}`);
 
-      this._http.post(`${Api_Url}/api/Account/Logout`, {headers: authHeader});
+      this._http.post(`${Api_Url}/api/Account/Logout`, {header: authHeader});
       this._router.navigate(['/login'])
     }
-}
+  }
+
