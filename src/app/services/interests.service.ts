@@ -22,6 +22,10 @@ export class InterestsService {
   getSingleInterests(id: string) {
     return this._http.get(`${Api_Url}/api/Interests/${id}`, { headers: this.getHeaders() });
   }
+
+  getSingleInterestsByEntity(id: string) {
+    return this._http.get(`${Api_Url}/api/Interests/InterestsProfile/${id}`, { headers: this.getHeaders() });
+  }
   
   createInterests(interests: Interests) {
     return this._http.post(`${Api_Url}/api/Interests`, interests, { headers: this.getHeaders()});

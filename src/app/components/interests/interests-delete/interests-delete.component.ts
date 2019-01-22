@@ -14,7 +14,7 @@ export class InterestsDeleteComponent implements OnInit {
 
   constructor(private _interestsService: InterestsService, private _ar: ActivatedRoute, private _router: Router) {
     this._ar.paramMap.subscribe(p => {
-      this._interestsService.getSingleInterests(p.get('id')).subscribe((singleInterest: Interests) => {
+      this._interestsService.getSingleInterestsByEntity(p.get('id')).subscribe((singleInterest: Interests) => {
         this.interests = singleInterest;
       });
     });
@@ -24,7 +24,7 @@ export class InterestsDeleteComponent implements OnInit {
   }
 
   onDelete() {
-    this._interestsService.deleteInterests(this.interests.ownerId).subscribe(() => {
+    this._interestsService.deleteInterests(this.interests.interestsEntityId).subscribe(() => {
       this._router.navigate(['/interests']);
     });
   }
