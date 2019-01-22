@@ -1,5 +1,9 @@
 .page-footer{
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:darkslategrey;
+    color: white;
+    text-align: center
 }
