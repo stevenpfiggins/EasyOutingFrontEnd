@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +10,18 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  username: string;
-  isLoggedIn: boolean
+  isLoggedIn: boolean;
+  token: any;
+  decodedToken: any;
+  userId: any;
 
-  constructor(public _authService: AuthService, private _router: Router) { }
+  constructor(public _authService: AuthService, private _router: Router, private _jwtHelper: JwtHelperService) { }
 
   ngOnInit() {
-    this.isLoggedIn = this._authService.currentUser();
+    this.isLoggedIn = this._authService.loggedIn();
+    this.token = localStorage.getItem('token');
+    this.decodedToken = this._jwtHelper.decodeToken(this.token);
+    this.userId = this.decodedToken.nameid;
   }
 
   onLogout() {
