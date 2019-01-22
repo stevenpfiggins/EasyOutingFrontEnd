@@ -37,7 +37,6 @@ import { InterestsDetailComponent } from './components/interests/interests-detai
 import { InterestsEditComponent } from './components/interests/interests-edit/interests-edit.component';
 import { InterestsDeleteComponent } from './components/interests/interests-delete/interests-delete.component';
 import { AuthGuard } from './guards/auth.guard';
-import { FooterComponent } from './components/footer/footer.component';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
@@ -84,7 +83,6 @@ const routes = [
     InterestsDetailComponent,
     InterestsEditComponent,
     InterestsDeleteComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,
