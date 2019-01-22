@@ -63,7 +63,7 @@ const routes = [
     {path: 'delete/:id', component: InterestsDeleteComponent}
   ]
 },
-{path: '**', component: RegistrationComponent }
+{path: '**', component: HomeComponent }
 ];
 
 
