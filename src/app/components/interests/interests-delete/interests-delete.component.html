@@ -165,6 +165,5 @@
     <span>{{outing.galleries}}</span>
   </div>
 </div>
-
-<button mat-button color="warn" (click)="onDelete()">Delete</button>
-<button mat-button color="primary" routerLink="interests">Back to List</button>
+<button mat-button color="primary" routerLink="/interests/delete/{{interests.ownerId}}">Delete</button>
+<button mat-button color="primary" routerLink="/interests">Back to List</button>
