@@ -1,6 +1,9 @@
 <h1>Feed</h1>
 <hr>
 
+<div ng-if="userDate.isAdmin">Admin Only</div>
+
+
 <div class="deck">
   <div class="card" *ngFor="let outing of outings">
     <div class="cardContainer">

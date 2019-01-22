@@ -22,6 +22,7 @@
         <mat-header-cell *matHeaderCellDef> </mat-header-cell>
         <mat-cell *matCellDef="let interests">
           <i mat-icon class="material-icons" routerLink="/interests/edit/{{interests.ownerId}}">edit</i>
+          <i class="material-icons" routerLink="/interests/delete/{{interests.ownerId}}">delete</i>
         </mat-cell>
       </ng-container>
     
