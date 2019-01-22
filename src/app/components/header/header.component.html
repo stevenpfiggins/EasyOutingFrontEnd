@@ -1,11 +1,11 @@
 <mat-toolbar color="primary">
-  <span>Easy Outings</span>
+  <span><img src="../../../assets/logo.png" width="75" height="75"></span>
   <button mat-button routerLink="home">Home</button>
   <button mat-button routerLink="outings" *ngIf="isLoggedIn">Outings</button>
   <button mat-button routerLink="interests" *ngIf="isLoggedIn">Interests</button>
+  <button mat-button routerLink="admin" *ngIf="userId == 1">Admin</button>
   <span class="example-fill-remaining-space"></span>
   <div *ngIf="isLoggedIn; else auth">
-    <span>Welcome {{username}}</span>
     <button mat-raised-button class="nav-btn" (click)="onLogout()">Logout</button>
   </div>
   <ng-template #auth>
