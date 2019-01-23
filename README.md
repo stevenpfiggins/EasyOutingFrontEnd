@@ -1,4 +1,5 @@
 # Easy Outing App
+![logo](logo.png)
 # Basic Overview
 Using a user's selected interests and prompted location, a feed of outings will be listed that the user can see and select to see details if interested in that outing.
 
@@ -9,7 +10,7 @@ After registering and logging in the user can then see links to interests and ou
 Once at either of those views the user can then create, update, and delete data from those tables. 
 The home page will show outings based off of the users location and interests.  
 
-## Development Team:
+# Development Team:
 * <a href="https://github.com/stevenpfiggins">Steven Figgins</a>
 * <a href="https://github.com/marcguerra91">Marc Guerra</a>
 
