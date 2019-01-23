@@ -1,16 +1,35 @@
-<h1>Feed</h1>
-<hr>
-
-
-
-<div class="deck">
-  <div class="card" *ngFor="let outing of outings">
-    <div class="cardContainer">
-      <h1>{{outing.outingName}}</h1>
-      <h2>{{outing.outingLocation}}</h2>
-      <h3>{{outing.outingDate | date: "longDate"}}</h3>
-      <h3>{{outing.outingType}}</h3>
-      <h5>{{outing.createdOn | date: "longDate"}}</h5>
+<div *ngIf="isLoggedIn; else auth">
+  <h1>Discover</h1>
+  <hr>
+  <div class="deck">
+    <div class="card" *ngFor="let outing of outings">
+      <div class="cardContainer">
+        <h1>{{outing.outingName}}</h1>
+        <h2>{{outing.outingLocation}}</h2>
+        <h3>{{outing.outingDate | date: "longDate"}}</h3>
+        <h3>{{outing.outingType}}</h3>
+        <h5>{{outing.createdOn | date: "longDate"}}</h5>
+        <button mat-raised-button class="nav-btn" routerLink="/outings/detail/{{outing.outingEntityId}}">See Details</button>
+      </div>
     </div>
   </div>
 </div>
+<ng-template #auth>
+  <h1>Find Your Next Adventure</h1>
+  <img src="../../../assets/logo.png">
+  <br>
+  <button mat-raised-button class="home-btn" routerLink="/register">Sign Up Now</button>
+  <hr>
+  <div class="deck">
+      <div class="card" *ngFor="let outing of outings">
+        <div class="cardContainer">
+          <h1>{{outing.outingName}}</h1>
+          <h2>{{outing.outingLocation}}</h2>
+          <h3>{{outing.outingDate | date: "longDate"}}</h3>
+          <h3>{{outing.outingType}}</h3>
+          <h5>{{outing.createdOn | date: "longDate"}}</h5>
+          <button mat-raised-button class="nav-btn" routerLink="/outings/detail/{{outing.outingEntityId}}">See Details</button>
+        </div>
+      </div>
+    </div>
+</ng-template>
