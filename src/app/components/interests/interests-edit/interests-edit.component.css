@@ -1,0 +1,32 @@
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
+}
+.container {
+    padding: 2px 16px;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 20em;
+    margin:1em;
+}
+img {
+    border-radius: 5px 5px 5px 5px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:1em;
+}
+.column {
+    width: 25%;
+    padding: 2em 2em;
+    display: inline-block;
+}
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+ 
+  

@@ -6,6 +6,7 @@ import { Observable, Subject } from 'rxjs';
 import { RegisterUser } from '../Models/RegisterUser';
 import { Router } from "@angular/router";
 import { Api_Url } from "../../environments/environment.prod";
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable()
 export class AuthService {
@@ -13,7 +14,7 @@ export class AuthService {
   isLoggedIn = new Subject<boolean>();
   loginInfo: UserInfo;
 
-  constructor(private _http: HttpClient, private _router: Router) { }
+  constructor(private _http: HttpClient, private _router: Router, private _jwtHelperService: JwtHelperService) { }
 
     register(regUserData: RegisterUser) {
       return this._http.post(`${Api_Url}/api/Auth/Register`, regUserData)
@@ -25,12 +26,18 @@ export class AuthService {
         localStorage.setItem('token', token.token);
         this.isLoggedIn.next(true);
         this._router.navigate(['/home'])
+        window.location.reload();
       });
     }
 
     currentUser(): boolean {
       if(!localStorage.getItem('token')) {return false;}
       return true;
+    }
+
+    loggedIn() {
+      const token = localStorage.getItem('token');
+      return !this._jwtHelperService.isTokenExpired(token);
     }
 
     logout() {
@@ -41,6 +48,7 @@ export class AuthService {
 
       this._http.post(`${Api_Url}/api/Account/Logout`, {header: authHeader});
       this._router.navigate(['/login'])
+      window.location.reload();
     }
   }
 

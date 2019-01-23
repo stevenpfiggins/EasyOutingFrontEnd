@@ -1,0 +1,31 @@
+.deck {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.card {
+    box-shadow: 0.5em 0.5em 2em rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    width: 25%;
+    text-align: center;
+    background: #673AB7;
+    color: white;
+    border-radius: 1.5em;
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.card:hover {
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 2);
+    background: white;
+    color: #673AB7;
+    border-radius: 1.5em;
+}
+
+.cardContainer {
+    padding: 1em 2em;
+}

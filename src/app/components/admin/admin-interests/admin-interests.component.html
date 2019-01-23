@@ -1,0 +1,30 @@
+<h1>Interest Profiles</h1>
+<hr>
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="interestsEntityId">
+      <mat-header-cell *matHeaderCellDef>Profile ID#</mat-header-cell>
+      <mat-cell *matCellDef="let interests">{{interests.interestsEntityId}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="userName">
+      <mat-header-cell *matHeaderCellDef>Username</mat-header-cell>
+      <mat-cell *matCellDef="let interests">{{interests.userName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="userLocation">
+      <mat-header-cell *matHeaderCellDef>Location</mat-header-cell>
+      <mat-cell *matCellDef="let interests">{{interests.userLocation}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let interests">
+        <i mat-icon class="material-icons" routerLink="/admin/interestsdelete/{{interests.interestsEntityId}}">delete</i>
+      </mat-cell>
+    </ng-container>
+  </mat-table>
+</div>
