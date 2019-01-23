@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material';
+import { Interests } from 'src/app/Models/Interests';
+import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
   selector: 'app-admin-interests',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminInterestsComponent implements OnInit {
 
-  constructor() { }
+  columnNames = ['interestsEntityId', 'userName', 'userLocation', 'delete'];
+  dataSource: MatTableDataSource<Interests>;
+
+  constructor(private _adminService: AdminService) { }
 
   ngOnInit() {
+    this._adminService.getInterests().subscribe((interests: Interests[]) => {
+      this.dataSource = new MatTableDataSource<Interests>(interests);
+    });
   }
 
 }
