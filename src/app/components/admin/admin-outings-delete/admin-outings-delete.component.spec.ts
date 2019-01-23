@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
+import { AdminOutingsDeleteComponent } from './admin-outings-delete.component';
 
-describe('HomeComponent', () => {
-  let component: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe('AdminOutingsDeleteComponent', () => {
+  let component: AdminOutingsDeleteComponent;
+  let fixture: ComponentFixture<AdminOutingsDeleteComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ AdminOutingsDeleteComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(AdminOutingsDeleteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
