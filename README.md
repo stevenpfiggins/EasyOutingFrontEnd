@@ -1,10 +1,19 @@
-# EasyOutingAngular
+# Easy Outing App
+# Basic Overview
+Using a user's selected interests and prompted location, a feed of outings will be listed that the user can see and select to see details if interested in that outing.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
+# Web Directions:
+First, go to  https://easy-outings.herokuapp.com/home. The non registered user will only be able to view the list of current available outings. After registering and logging in the user can then see links to interests and outings views. Once at either of those views the user can then create, update, and delete data from those tables. The home page will show outings based off of the users location and interests.  
+
+# Development Team:
+* <a href="https://github.com/stevenpfiggins">Steven Figgins</a>
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+# Easy Outing App
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
 ## Code scaffolding
 
