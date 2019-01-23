@@ -9,14 +9,14 @@
         <h3>{{outing.outingDate | date: "longDate"}}</h3>
         <h3>{{outing.outingType}}</h3>
         <h5>{{outing.createdOn | date: "longDate"}}</h5>
-        <button mat-raised-button class="nav-btn" routerLink="/outings/detail/{{outing.outingEntityId}}">See Details</button>
+        <button mat-raised-button class="nav-btn" routerLink="/home/details/{{outing.outingEntityId}}">See Details</button>
       </div>
     </div>
   </div>
 </div>
 <ng-template #auth>
   <h1>Find Your Next Adventure</h1>
-  <img src="../../../assets/logo.png">
+  <img src="../../../../assets/logo.png">
   <br>
   <button mat-raised-button class="home-btn" routerLink="/register">Sign Up Now</button>
   <hr>
@@ -28,7 +28,7 @@
           <h3>{{outing.outingDate | date: "longDate"}}</h3>
           <h3>{{outing.outingType}}</h3>
           <h5>{{outing.createdOn | date: "longDate"}}</h5>
-          <button mat-raised-button class="nav-btn" routerLink="/outings/detail/{{outing.outingEntityId}}">See Details</button>
+          <button mat-raised-button class="nav-btn" routerLink="/home/details/{{outing.outingEntityId}}">See Details</button>
         </div>
       </div>
     </div>

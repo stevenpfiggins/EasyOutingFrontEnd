@@ -48,6 +48,7 @@ export class AuthService {
 
       this._http.post(`${Api_Url}/api/Account/Logout`, {header: authHeader});
       this._router.navigate(['/login'])
+      window.location.reload();
     }
   }
 
