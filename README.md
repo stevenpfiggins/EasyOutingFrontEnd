@@ -1,18 +1,27 @@
 # Easy Outing App
-![logo](logo.png)
-# Basic Overview
+* This is only the front end application repo.
+* The back end application repo created by the same team can be found <a href="https://github.com/stevenpfiggins/EasyOutingAPI">here</a>.
+## Basic Overview
 Using a user's selected interests and prompted location, a feed of outings will be listed that the user can see and select to see details if interested in that outing.
 
 # Web Directions:
-First, go to  https://easy-outings.herokuapp.com/home. 
-The non registered user will only be able to view the list of current available outings. 
-After registering and logging in the user can then see links to interests and outings views.
-Once at either of those views the user can then create, update, and delete data from those tables. 
-The home page will show outings based off of the users location and interests.  
+<p>1. Go to  https://easy-outings.herokuapp.com/home.</p>
+<p>2. The non registered user will only be able to view the list of current available outings.</p> 
+<p>3. After registering and logging in the user can then see links to interests and outings views.</p>
+<p>4. Once at either of those views the user can then create, update, and delete data from those tables.</p>
+<p>5. The home page will show outings based off of the users location and interests.</p> 
 
 # Development Team:
 * <a href="https://github.com/stevenpfiggins">Steven Figgins</a>
 * <a href="https://github.com/marcguerra91">Marc Guerra</a>
+
+## Frameworks and Libraries:
+* .NET Core 2.0
+* C# 7
+* HTML 5
+* CSS 3
+* Angular 7
+* Angular Material
 
 # Run Locally Directions:
 
